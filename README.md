@@ -109,6 +109,7 @@ The dApp frontend is built with React.js, providing an intuitive interface for w
 - [MetaMask Documentation](https://docs.metamask.io)
 - [zkVerify Documentation](https://docs.zkverify.io)
 - [Ethers.js Library](https://docs.ethers.io)
+- [Arbitrum Documentation](https://docs.arbitrum.io)
 
 For additional support, please raise an issue on our GitHub repository.
 
