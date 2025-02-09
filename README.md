@@ -30,3 +30,27 @@ Before setting up the project, ensure you have the following:
 ## Installation
 
 1. Clone the repository:
+```sh
+git clone https://github.com/RishiS31/zkVerifyHub.git
+cd zkVerifyHub
+```
+2. Install dependencies:
+```sh
+npm install
+```
+
+3. Configure environment variables:
+- Create a `.env` file in the root directory.
+- Add your Infura/Alchemy API key and other required configurations.
+
+---
+
+## Wallet Integration: MetaMask
+
+### Steps to Connect MetaMask Wallet
+
+1. **Detect MetaMask Provider**:
+Use `window.ethereum` or a library like `@metamask/detect-provider` to detect if MetaMask is installed.
+
+
+
