@@ -45,12 +45,71 @@ npm install
 
 ---
 
-## Wallet Integration: MetaMask
+---
 
-### Steps to Connect MetaMask Wallet
+## Workflow of zkVerifyHub
 
-1. **Detect MetaMask Provider**:
-Use `window.ethereum` or a library like `@metamask/detect-provider` to detect if MetaMask is installed.
+1. **User Flow**:
+ - User connects their wallet using MetaMask.
+ - User submits a zk-SNARK proof via the frontend.
 
+2. **Smart Contract Interaction**:
+ - The submitted proof is sent to a smart contract that calls zkVerify's verifier.
+
+3. **Proof Validation**:
+ - The zkVerify verifier validates the proof and updates the verification status.
+
+4. **Result Display**:
+ - The dApp UI displays the verification result to the user.
+
+---
+
+## Smart Contract Integration with zkVerify
+
+### Key Functions
+
+1. **Submit Proofs**:
+ Use `verifyProofAttestation` in zkVerify smart contracts to submit proofs.
+ ```
+ const tx = await contract.verifyProofAttestation(proofData);
+ await tx.wait();
+ console.log("Proof submitted successfully!");
+ ```
+
+2. **Check Verification Status**:
+ Query the contract for proof verification results.
+ ```
+ const status = await contract.getVerificationStatus(proofId);
+ console.log("Verification Status:", status);
+ ```
+
+---
+
+## Development Notes
+
+### Testing Locally
+1. Deploy smart contracts using Hardhat or Truffle.
+2. Use a local Ethereum node (e.g., Ganache) or connect to an Arbitrum testnet.
+
+### Frontend Framework
+The dApp frontend is built with React.js, providing an intuitive interface for wallet connection and proof submission.
+
+---
+
+## Future Enhancements
+
+- Support additional wallets beyond MetaMask using WalletConnect or Coinbase Wallet SDK.
+- Integrate advanced zk-SNARK proving schemes like Groth16 or Plonk.
+- Expand compatibility with other L2 solutions like Optimism.
+
+---
+
+## Resources
+
+- [MetaMask Documentation](https://docs.metamask.io)
+- [zkVerify Documentation](https://docs.zkverify.io)
+- [Ethers.js Library](https://docs.ethers.io)
+
+For additional support, please raise an issue on our GitHub repository.
 
 
